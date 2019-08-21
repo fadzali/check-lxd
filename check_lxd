@@ -108,7 +108,7 @@ def check_container_mem(container_data, critical, warning):
     used_mem = int(container_data['state']['memory']['usage'] / 1048576)
     if used_mem > critical[0]:
         return_state(
-            ['critical'],
+            state['critical'],
             "CRITICAL, the container consumes %dM of RAM, over %dM" % (used_mem, critical[0]))
     if used_mem > warning[0]:
         return_state(
